@@ -1,0 +1,10 @@
+all:mul
+
+mul:mul.o
+       gcc -m32 -g -Wall -o mul mul.o
+
+mul.o: mul.asm
+       nasm -g -f elf -w+all -o mul.o mul.asm
+
+clear:
+       rm -rf *o
